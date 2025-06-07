@@ -1,19 +1,79 @@
 /* Task 1: Style the body */
 body {
-    /* insert code here */
+    font-family: sans-serif, "Montserrat";
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    position: relative; /* Required for pseudo-element layering */
+    z-index: 1;
 }
 
 /* Task 2: Create a pseudo-element for the background and blur */
 body::before {
-    /* insert code here */
+    content: ""; /* Always required or the pseudo-element won’t show */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/763/961/160/vaporwave-aesthetic-wallpaper-preview.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1; /* Push it behind the body content */
+}
 }
 
 /* Task 3: Style the content area */
 .content {
     /* insert code here */
+    position: relative;
+    text-align: center;
+    max-width: fit-content;
+    padding: 10px;
 }
 
 /* Task 4: Add styles for headings, paragraphs, and buttons */
-h1, h2, .lead, .btn-primary {
+h1, h2 {
     /* insert code here */
+                   /* Big enough to yell without being rude */
+    font-weight: 700;              /* Bold, but not screaming */
+    color: #ffffff;                /* White for vaporwave vibes */
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3)
+}
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #e0e0e0;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #ff4dff;         /* Hot pink attack */
+    border: none;
+    padding: 0.75rem 2rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 77, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #e600e6;
+    box-shadow: 0 6px 20px rgba(255, 77, 255, 0.5);
+    transform: translateY(-2px);
 }
